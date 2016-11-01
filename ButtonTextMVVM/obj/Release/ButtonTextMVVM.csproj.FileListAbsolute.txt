@@ -1,0 +1,14 @@
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\bin\Release\ButtonTextMVVM.exe.config
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.csproj.ResolveComReference.cache
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\bin\Release\ButtonTextMVVM.exe
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\bin\Release\ButtonTextMVVM.pdb
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\MainWindow.baml
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\MainWindow.g.cs
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\App.g.cs
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM_MarkupCompile.cache
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.g.resources
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.Properties.Resources.resources
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.csproj.GenerateResource.Cache
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.exe
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.pdb
+D:\Programming\CSharp\ButtonTextMVVM\ButtonTextMVVM\obj\Release\ButtonTextMVVM.csprojResolveAssemblyReference.cache

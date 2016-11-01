@@ -1,0 +1,123 @@
+﻿<Window x:Class="ButtonTextMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="577.752" Width="671.429"
+        ResizeMode="CanMinimize"
+        Icon="Resources/Keysight.ico">
+    <StackPanel Orientation="Vertical">
+        
+   
+        <Grid Margin="10,0,398,481">
+            <Button Height="30" Width="100" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="Connect_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=StatusBar}" Value="Connected">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                Connect
+            </Button>
+            <StackPanel Orientation="Horizontal">
+            <Button Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Disonnect_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=StatusBar}" Value="Not Connected">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                Disonnect
+            </Button>
+            <StatusBar Margin="113,0,0,0" Background="LightGray">
+                <TextBlock Name="StatusBar" Width="142" Height="19" HorizontalAlignment="Right" VerticalAlignment="Center" Background="LightGray" TextAlignment="Center"/>
+            </StatusBar>
+        </Grid>
+        <StackPanel Height="100" Width="300" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Vertical">
+            <StackPanel Height="50" Width="300" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Click="OutputOn_CLick" HorizontalAlignment="Left" MaxWidth="150" Width="244">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=StatusBar}" Value="Not Connected">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style> Output On
+                </Button>
+                <Button Click="OutputOff_Click" HorizontalAlignment="Right" MaxWidth="150" Width="186">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=StatusBar}" Value="Not Connected">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style> Output Off
+                </Button>
+            </StackPanel>
+            <StatusBar Height="50">
+                <TextBlock Name="OutputStatus" Width="100" Height="50" TextAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=OutputStatus}" Value="Out On">
+                                    <Setter Property="Background" Value="LightGreen" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Text, ElementName=OutputStatus}" Value="Out Off">
+                                    <Setter Property="Background" Value="#FFEA4242" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StatusBar>
+        </StackPanel>
+
+
+
+
+
+        <Grid Margin="10,114,0,283" Height ="150" Width="330" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"></RowDefinition>
+                <RowDefinition Height="36"></RowDefinition>
+                <RowDefinition Height="36"></RowDefinition>
+                <RowDefinition Height="36"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Click="SetVoltage_Click" Height="30" Width="100">Set Voltage</Button>
+            <Button Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Click="SetCurrent_Click" Height="30" Width="100">Set Current</Button>
+            <TextBox Grid.Column="1" Grid.Row="1" Name ="Voltage"  HorizontalAlignment="Center" Height="30" Width="100" />
+            <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Content="Voltage"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Name ="Current" HorizontalAlignment="Center" Height="30" Width="100" />
+            <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Content="Current"/>
+        </Grid>
+
+        <StackPanel VerticalAlignment="Bottom" Height="126" Margin="0,0,0,59" Background="Gray">
+            <Label HorizontalAlignment="Left">Voltage</Label>
+            <StatusBar>
+                <TextBlock Name="VoltageStatus" Margin="0" HorizontalAlignment="Left" Height="30" Width="100" Text="{Binding Path=VoltagePart}"></TextBlock>
+            </StatusBar>
+            <Label HorizontalAlignment="Left">Current</Label>
+            <StatusBar>
+                <TextBlock Name ="CurrentStatus" Margin="0" HorizontalAlignment="Left" Height="30" Width="100" Text="{Binding Path=CurrentPart}"></TextBlock>
+            </StatusBar>
+        </StackPanel>
+    </StackPanel>
+
+    
+</Window>
